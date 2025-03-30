@@ -1,13 +1,11 @@
 package com.bank.Bank.Transiction.API.domain.user;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import com.bank.Bank.Transiction.API.domain.account.Account;
 import com.bank.Bank.Transiction.API.domain.card.Card;
 import com.bank.Bank.Transiction.API.domain.feature.Feature;
 import com.bank.Bank.Transiction.API.domain.news.News;
-import com.bank.Bank.Transiction.API.dto.AccountDTO;
 import com.bank.Bank.Transiction.API.dto.UserDTO;
 
 import jakarta.persistence.CascadeType;
@@ -73,12 +71,22 @@ public class User {
         this.document = data.document();
         this.userType = data.userType();
         this.email = data.email();
+        this.password = data.password();
 
         if(data.account() != null) {
             Account newAccount = new Account();
             newAccount.setNumber(data.account().number());
             newAccount.setBalance(data.account().balance());
+            newAccount.setLimit(data.account().limit());
+            newAccount.setAgency(data.account().agency());
             this.account = newAccount;
+        }
+
+        if(data.card() != null) {
+            Card newCard = new Card();
+            newCard.setLimit(data.card().limit());
+            newCard.setNumber(data.card().number());
+            this.card = newCard;
         }
     }
 

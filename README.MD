@@ -30,6 +30,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 - **Swagger** (Documentação da API)
 - **Railway** (Hospedagem do banco de dados online)
 - **PostgreSQL** (Banco de dados relacional)
+- **Mermaid** (Criação do diagrama de classe do banco de dados)
 
 ## Diagrama de Classes
 
@@ -82,12 +83,9 @@ classDiagram
 ## ⚙️ Funcionalidades
 
 - **Gerenciamento de Usuários:** Cada usuário (cliente) possui:
-  - Primeiro e último nome
-  - Email
-  - Senha
-  - Saldo
+  - Primeiro e último nome, email, senha, dados da conta, cartão de crédito, documento de identificação.
   - Tipo de acesso (Usuário Comum ou Empresarial)
-  - Documento (CPF ou CNPJ)
+
 
 - **Transferências Bancárias:**
   - Permite a realização de transações entre contas.
@@ -116,14 +114,21 @@ Toda contribuição será bem vinda! Por se tratar do meu primeiro projeto, prec
 
 ## 📜 Aplicação na prática
 
-- Swagger: documentação com os métodos implantados.
-![alt text](swagger.png)
+**Swagger: documentação com os métodos implantados.**
+![alt text](registro-swagger.png)
 
-- Transferência realizada quando o usuário não possui saldo suficiente 
-![alt text](saldoinsuficiente.png)
+**Registro de usuários no Railway**
+![alt text](registro-usuarios-railway.png)
 
-- Registro de transação com sucesso: aqui foram impressos todos os dados do banco, inclusive a senha. Mas se trata apenas de ilustração, pois alguns dados não devem estar disponíveis nesta consulta
-![alt text](transacao-com-sucesso.png)
+**Registro de transações executadas no banco**
+![alt text](registro-transacoes-railway.png)
 
-- Registro do banco de dados no Railway: lista de usuários e registro das transações realizadas
-![alt text](registrousuarios-e-transacoes.png)
+**Transferência realizada quando o usuário não possui saldo suficiente**
+![alt text](saldo-insuficiente.png)
+
+**Tratamento de erros**
+- Usuário não encontrado
+![alt text](user-not-found.png)
+
+- Saldo insuficiente
+![alt text]saldo-insuficiente.png

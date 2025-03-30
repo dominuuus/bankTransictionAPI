@@ -55,7 +55,7 @@ public class TransactionService {
 
     }
 
-    public boolean authorizeTransaction(User sender, BigDecimal value) {
+    public boolean authorizeTransaction(User sender, BigDecimal value) throws Exception {
         String urlMockTransfer = "https://util.devi.tools/api/v2/authorize";
         ResponseEntity<Map> authorizationResponse = restTemplate.getForEntity(urlMockTransfer, Map.class);
         if(authorizationResponse.getStatusCode() == HttpStatus.OK) {
