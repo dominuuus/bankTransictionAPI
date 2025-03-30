@@ -33,52 +33,8 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 - **Mermaid** (Criação do diagrama de classe do banco de dados)
 
 ## Diagrama de Classes
+![alt text](mermaid.png)
 
-```mermaid
-
-classDiagram
-    class User {
-        +id: Integer
-        +firstname: String
-        +lastName: String
-        +document: Integer
-        +email: String
-        +password: String
-        +userType: String
-        +account: Account
-        +card: Card
-        +features: Features
-        +news: News
-    }
-
-    class Account {
-        +number: String
-        +agency: String
-        +balance: Double
-        +limite: Double
-    }
-
-    class Card {
-        +number: String
-        +limit: Double
-    }
-
-    class Features {
-        +icon: String
-        +description: String
-    }
-
-    class News {
-        +icon: String
-        +description: String
-    }
-
-    User "1" *-- "1" Account : contains
-    User "1" *-- "1" Card : contains
-    User "1" *-- "1" Features : has
-    User "1" *-- "1" News : has
-
-```mermaid
 
 ## ⚙️ Funcionalidades
 
