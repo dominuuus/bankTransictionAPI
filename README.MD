@@ -64,9 +64,20 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 Durante o desenvolvimento, enfrentei desafios na configuração do banco de dados PostgreSQL no Railway. Diversos tutoriais apresentavam erros na conexão, exigindo múltiplas tentativas até alcançar uma integração bem-sucedida. Além disso, utilizei IA Generativa para esclarecer dúvidas e aprimorar a lógica do código.
 
 
-🤝 Contribuição
+## 🤝 Contribuição
 Toda contribuição será bem vinda! Por se tratar do meu primeiro projeto, precisei recorrer a fontes diferentes para construir o projeto, então acredito que há muitos ajustes a serem realizados.
 
 
-📜 Licença
-Este projeto é distribuído sob a licença MIT. Consulte o arquivo `"LICENSE"` para mais detalhes.
+## 📜 Aplicação na prática
+
+- Swagger: documentação com os métodos implantados.
+![alt text](swagger.png)
+
+- Transferência realizada quando o usuário não possui saldo suficiente 
+![alt text](saldoinsuficiente.png)
+
+- Registro de transação com sucesso: aqui foram impressos todos os dados do banco, inclusive a senha. Mas se trata apenas de ilustração, pois alguns dados não devem estar disponíveis nesta consulta
+![alt text](transacao-com-sucesso.png)
+
+- Registro do banco de dados no Railway: lista de usuários e registro das transações realizadas
+![alt text](registrousuarios-e-transacoes.png)
