@@ -1,16 +1,25 @@
 package com.bank.Bank.Transiction.API.domain.user;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import com.bank.Bank.Transiction.API.domain.account.Account;
+import com.bank.Bank.Transiction.API.domain.card.Card;
+import com.bank.Bank.Transiction.API.domain.feature.Feature;
+import com.bank.Bank.Transiction.API.domain.news.News;
 import com.bank.Bank.Transiction.API.dto.UserDTO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -31,7 +40,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String name;
+    private String firstname;
     private String lastName;
 
     @Column(unique = true)
@@ -39,6 +48,7 @@ public class User {
 
     @Column(unique = true)
     private String email;
+
     private String password;
     
     private BigDecimal balance;
@@ -46,13 +56,24 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Account account;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Card card;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Feature> feature;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<News> news;
+
     public User(UserDTO data) {
-        this.name = data.name();
+        this.firstname = data.firstname();
         this.lastName = data.lastName();
         this.document = data.document();
         this.balance = data.balance();
         this.userType = data.userType();
-        this.password = data.password();
         this.email = data.email();
     }
 
