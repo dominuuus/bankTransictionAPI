@@ -7,6 +7,7 @@ import com.bank.Bank.Transiction.API.domain.account.Account;
 import com.bank.Bank.Transiction.API.domain.card.Card;
 import com.bank.Bank.Transiction.API.domain.feature.Feature;
 import com.bank.Bank.Transiction.API.domain.news.News;
+import com.bank.Bank.Transiction.API.dto.AccountDTO;
 import com.bank.Bank.Transiction.API.dto.UserDTO;
 
 import jakarta.persistence.CascadeType;
@@ -50,8 +51,6 @@ public class User {
     private String email;
 
     private String password;
-    
-    private BigDecimal balance;
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
@@ -72,9 +71,15 @@ public class User {
         this.firstname = data.firstname();
         this.lastName = data.lastName();
         this.document = data.document();
-        this.balance = data.balance();
         this.userType = data.userType();
         this.email = data.email();
+
+        if(data.account() != null) {
+            Account newAccount = new Account();
+            newAccount.setNumber(data.account().number());
+            newAccount.setBalance(data.account().balance());
+            this.account = newAccount;
+        }
     }
 
 }

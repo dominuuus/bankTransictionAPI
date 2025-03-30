@@ -17,12 +17,13 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
+
     public void validateTransaction(User sender, BigDecimal amount) throws Exception {
         if(sender.getUserType() == UserType.MERCHANT) {
             throw new Exception("Usuário do tipo Merchat não está autorizado a realizar esta transação");
         }
 
-        if(sender.getBalance().compareTo(amount) < 0) {
+        if(sender.getAccount().getBalance().compareTo(amount) < 0) {
             throw new Exception("Saldo insuficiente");
         }
     }

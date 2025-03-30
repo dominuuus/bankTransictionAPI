@@ -2,6 +2,8 @@ package com.bank.Bank.Transiction.API.domain.card;
 
 import java.math.BigDecimal;
 
+import com.bank.Bank.Transiction.API.dto.CardDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,4 +28,9 @@ public class Card {
 
     @Column(name = "credit_limit", precision = 13, scale = 2)
     private BigDecimal limit;
+
+    public Card(CardDTO cardDTO) {
+        this.number = cardDTO.number();
+        this.limit = cardDTO.limit();
+    }
 }
