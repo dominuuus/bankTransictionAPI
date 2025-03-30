@@ -18,7 +18,7 @@ Este projeto foi desenvolvido como desafio de código do bootcamp **Decola Tech 
 - [Contribuição](#-contribuição)
 - [Licença](#-licença)
 
----
+
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -31,7 +31,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 - **Railway** (Hospedagem do banco de dados online)
 - **PostgreSQL** (Banco de dados relacional)
 
----
+
 
 ## ⚙️ Funcionalidades
 
@@ -53,24 +53,20 @@ O projeto foi desenvolvido com as seguintes tecnologias:
   - Se a resposta for `"success"`, a transação é concluída e o saldo é movimentado.
   - Caso contrário, a transação é rejeitada e os saldos permanecem inalterados.
 
----
 
 ## 📌 Desafios e Aprendizados
 
-✅ Primeiro projeto backend com Spring Boot
-✅ Publicação de API REST em produção
-✅ Estudo aprofundado de Java para compreender conceitos essenciais
-✅ Solução de problemas com integração PostgreSQL no Railway
+- ✅ Primeiro projeto backend com Spring Boot
+- ✅ Publicação de API REST em produção
+- ✅ Estudo aprofundado de Java para compreender conceitos essenciais
+- ✅ Solução de problemas com integração PostgreSQL no Railway
 
 Durante o desenvolvimento, enfrentei desafios na configuração do banco de dados PostgreSQL no Railway. Diversos tutoriais apresentavam erros na conexão, exigindo múltiplas tentativas até alcançar uma integração bem-sucedida. Além disso, utilizei IA Generativa para esclarecer dúvidas e aprimorar a lógica do código.
 
 
----
-
 🤝 Contribuição
 Toda contribuição será bem vinda! Por se tratar do meu primeiro projeto, precisei recorrer a fontes diferentes para construir o projeto, então acredito que há muitos ajustes a serem realizados.
 
----
 
 📜 Licença
 Este projeto é distribuído sob a licença MIT. Consulte o arquivo `"LICENSE"` para mais detalhes.
