@@ -1,8 +1,11 @@
 package com.bank.Bank.Transiction.API.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +25,11 @@ public class TransactionController {
     public ResponseEntity<Transactions> createTransaction(@RequestBody TransactionDTO transaction) throws Exception {
         Transactions newTransaction = this.transactionService.createTransaction(transaction);
         return new ResponseEntity<>(newTransaction, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Transactions>> getAllTransactions() {
+        List<Transactions> transactions = this.transactionService.getAllTransactions();
+        return new ResponseEntity<>(transactions, HttpStatus.OK);
     }
 }

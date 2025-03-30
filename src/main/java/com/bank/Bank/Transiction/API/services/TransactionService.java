@@ -2,7 +2,7 @@ package com.bank.Bank.Transiction.API.services;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,9 +26,6 @@ public class TransactionService {
 
     @Autowired
     private RestTemplate restTemplate;
-
-    @Autowired
-    private NotificationService notificationService;
 
     public Transactions createTransaction(TransactionDTO transaction) throws Exception{
         User sender = this.userService.findUserById(transaction.senderId());
@@ -54,9 +51,6 @@ public class TransactionService {
         this.userService.saveUser(sender);
         this.userService.saveUser(receiver);
 
-        this.notificationService.sendNotification(sender, "Transferência realizada com sucesso");
-        this.notificationService.sendNotification(receiver, "Transferência recebida");
-
         return newTransaction;
 
     }
@@ -68,6 +62,10 @@ public class TransactionService {
             String message = (String) authorizationResponse.getBody().get("status");
             return "success".equalsIgnoreCase(message);
         } else return false;
+    }
+
+    public List<Transactions> getAllTransactions() {
+        return this.repository.findAll();
     }
 
 }
